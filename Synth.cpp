@@ -21,7 +21,7 @@ Synth::Synth()
     mPhase(0),
     mSampleRate(44100.),
     mFreq(440.),
-    mCutoffVal(8800.),
+    mCutoffVal(16000.),
     mResonanceVal(0.)
 {
     this->SetFilterParams(mCutoffVal, mResonanceVal);
@@ -79,8 +79,12 @@ void Synth::OnNoteOn(int noteNumber, int velocity)
 {
     Voice* voice = this->FindFreeVoice();
     
-    voice->SetNoteNumber(noteNumber);
-    voice->NoteOn();
+    // TODO: Handle lack of a new voice gracefully
+    // (reuse an old one or something)
+    if (voice) {
+        voice->SetNoteNumber(noteNumber);
+        voice->NoteOn();
+    }
 }
 
 void Synth::OnNoteOff(int noteNumber, int velocity)
@@ -96,6 +100,17 @@ void Synth::OnNoteOff(int noteNumber, int velocity)
 void Synth::SetFilterParams(double cutoff, double q)
 {
     this->filter.Set(cutoff, q);
+}
+
+void Synth::SetFilterCutoff(double cutoff)
+{
+    mCutoffVal = cutoff;
+    this->SetFilterParams(mCutoffVal, mResonanceVal);
+}
+
+void Synth::SetFilterResonance(double q) {
+    mResonanceVal = q;
+    this->SetFilterParams(mCutoffVal, mResonanceVal);
 }
 
 void Synth::UpdateFilterParams()

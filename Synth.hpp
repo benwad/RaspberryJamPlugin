@@ -40,10 +40,12 @@ public:
     void Reset();
     void OnNoteOn(int noteNumber, int velocity);
     void OnNoteOff(int noteNumber, int velocity);
-    void SetFilterParams(double cutoff, double q);
     void UpdateFilterParams();
     Voice* FindFreeVoice();
 
+    void SetFilterParams(double cutoff, double q);
+    void SetFilterCutoff(double cutoff);
+    void SetFilterResonance(double q);
     void SetFrequency(double pFreq) { this->mFreq = pFreq; }
     void SetGain(double pGain) { this->mNoteGain = pGain; }
     void SetSampleRate(double pSampleRate) { this->mSampleRate = pSampleRate; }

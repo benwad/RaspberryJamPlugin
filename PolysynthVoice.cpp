@@ -4,6 +4,7 @@
 
 PolysynthVoice::PolysynthVoice()
 {
+    // Populate the volumes of the overtones
 	this->oscillators[0].second = 0.4f;
 	this->oscillators[1].second = 0.2f;
 	this->oscillators[2].second = 0.1f;

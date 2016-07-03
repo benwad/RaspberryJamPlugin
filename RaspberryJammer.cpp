@@ -5,6 +5,7 @@
 #include "IControl.h"
 #include "IKeyboardControl.h"
 
+#include <iostream>
 
 const int kNumPrograms = 8;
 
@@ -19,6 +20,7 @@ enum EParams
   kGainL = 0,
   kGainR,
   kMode,
+  kFilterCutoff,
   kNumParams
 };
 
@@ -39,6 +41,7 @@ RaspberryJammer::RaspberryJammer(IPlugInstanceInfo instanceInfo)
   //arguments are: name, defaultVal, minVal, maxVal, step, label
   GetParam(kGainL)->InitDouble("GainL", -12.0, -70.0, 12.0, 0.1, "dB");
   GetParam(kGainR)->InitDouble("GainR", -12.0, -70.0, 12.0, 0.1, "dB");
+  GetParam(kFilterCutoff)->InitDouble("Cutoff", 16000., 0., 44100., 5.);
   GetParam(kMode)->InitEnum("Mode", 0, 6);
   GetParam(kMode)->SetDisplayText(0, "a");
   GetParam(kMode)->SetDisplayText(1, "b");
@@ -54,6 +57,9 @@ RaspberryJammer::RaspberryJammer(IPlugInstanceInfo instanceInfo)
   IText text = IText(14);
   IBitmap regular = pGraphics->LoadIBitmap(WHITE_KEY_ID, WHITE_KEY_FN, 6);
   IBitmap sharp   = pGraphics->LoadIBitmap(BLACK_KEY_ID, BLACK_KEY_FN);
+  
+  mCutoffKnob = new IKnobMultiControl(this, kFilterCutoffX, kFilterCutoffY, kFilterCutoff, &knob);
+  pGraphics->AttachControl(mCutoffKnob);
 
   //                    C#     D#          F#      G#      A#
   int coords[12] = { 0, 7, 12, 20, 24, 36, 43, 48, 56, 60, 69, 72 };
@@ -192,6 +198,10 @@ void RaspberryJammer::OnParamChange(int paramIdx)
       break;
     case kGainR:
       mGainR = GetParam(kGainR)->DBToAmp();
+      break;
+    case kFilterCutoff:
+      std::cout << GetParam(kFilterCutoff)->Value() << std::endl;
+      this->synth.SetFilterCutoff(GetParam(kFilterCutoff)->Value());
       break;
     default:
       break;

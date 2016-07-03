@@ -38,6 +38,8 @@ public:
 private:
   IBitmapOverlayControl* mAboutBox;
   IControl* mKeyboard;
+  IControl* mCutoffKnob;
+  
   int mMeterIdx_L, mMeterIdx_R;
 
   IMidiQueue mMidiQueue;
@@ -65,8 +67,8 @@ enum ELayout
   kKeybX = 1,
   kKeybY = 233,
 
-  kGainX = 100,
-  kGainY = 100,
+  kFilterCutoffX = 100,
+  kFilterCutoffY = 100,
   kKnobFrames = 60
 };
 

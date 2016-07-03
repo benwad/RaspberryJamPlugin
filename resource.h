@@ -49,15 +49,15 @@
 #define PLUG_DOES_STATE_CHUNKS 0
 
 // Unique IDs for each image resource.
-#define KNOB_ID       101
-#define BG_ID         102
-#define ABOUTBOX_ID   103
-#define WHITE_KEY_ID  104
-#define BLACK_KEY_ID  105
+#define KNOB_ID             101
+#define BG_ID               102
+#define ABOUTBOX_ID         103
+#define WHITE_KEY_ID        104
+#define BLACK_KEY_ID        105
 
 // Image resource locations for this plug.
 #define KNOB_FN       "resources/img/knob.png"
-#define BG_FN         "resources/img/bg.png"
+#define BG_FN         "resources/img/bg_new.png"
 #define ABOUTBOX_FN   "resources/img/about.png"
 #define WHITE_KEY_FN  "resources/img/wk.png"
 #define BLACK_KEY_FN  "resources/img/bk.png"
