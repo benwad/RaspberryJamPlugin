@@ -13,25 +13,35 @@
 
 #include "FrameData.h"
 #include "Voice.h"
+#include "FilterButterworth24db.h"
+#include "LFO.h"
 
 class Synth
 {
     static const int numVoices = 16;
 
 private:
+    Voice* voices[numVoices];
+    CFilterButterworth24db filter;
+    LFO filterLfo;
+    
     double mFreq;
     double mNoteGain;
     double mSampleRate;
     int mPhase;
     double mGainL, mGainR;
-    Voice* voices[numVoices];
+    double mCutoffVal, mResonanceVal;
+    
 public:
     Synth();
+    ~Synth();
     FrameData NextFrame();
     void WriteFrames(unsigned long numFrames, double* out);
     void Reset();
     void OnNoteOn(int noteNumber, int velocity);
     void OnNoteOff(int noteNumber, int velocity);
+    void SetFilterParams(double cutoff, double q);
+    void UpdateFilterParams();
     Voice* FindFreeVoice();
 
     void SetFrequency(double pFreq) { this->mFreq = pFreq; }

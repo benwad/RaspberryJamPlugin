@@ -299,6 +299,22 @@
 		4FF016F8134E14E2001447BA /* ptrlist.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FF016F5134E14E2001447BA /* ptrlist.h */; };
 		4FF016F9134E14E2001447BA /* wdlstring.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FF016F6134E14E2001447BA /* wdlstring.h */; };
 		4FF0171A134E153A001447BA /* heapbuf.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FF01719134E153A001447BA /* heapbuf.h */; };
+		6F17E6EF1D293143001F827C /* FilterButterworth24db.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F17E6EB1D293142001F827C /* FilterButterworth24db.cpp */; };
+		6F17E6F01D293143001F827C /* FilterButterworth24db.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F17E6EB1D293142001F827C /* FilterButterworth24db.cpp */; };
+		6F17E6F11D293143001F827C /* FilterButterworth24db.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F17E6EB1D293142001F827C /* FilterButterworth24db.cpp */; };
+		6F17E6F21D293143001F827C /* FilterButterworth24db.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F17E6EB1D293142001F827C /* FilterButterworth24db.cpp */; };
+		6F17E6F31D293143001F827C /* FilterButterworth24db.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F17E6EB1D293142001F827C /* FilterButterworth24db.cpp */; };
+		6F17E6F41D293143001F827C /* FilterButterworth24db.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F17E6EB1D293142001F827C /* FilterButterworth24db.cpp */; };
+		6F17E6F51D293143001F827C /* FilterButterworth24db.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F17E6EC1D293143001F827C /* FilterButterworth24db.h */; };
+		6F17E6F61D293143001F827C /* FilterButterworth24db.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F17E6EC1D293143001F827C /* FilterButterworth24db.h */; };
+		6F17E6F71D293143001F827C /* LFO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F17E6ED1D293143001F827C /* LFO.cpp */; };
+		6F17E6F81D293143001F827C /* LFO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F17E6ED1D293143001F827C /* LFO.cpp */; };
+		6F17E6F91D293143001F827C /* LFO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F17E6ED1D293143001F827C /* LFO.cpp */; };
+		6F17E6FA1D293143001F827C /* LFO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F17E6ED1D293143001F827C /* LFO.cpp */; };
+		6F17E6FB1D293143001F827C /* LFO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F17E6ED1D293143001F827C /* LFO.cpp */; };
+		6F17E6FC1D293143001F827C /* LFO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F17E6ED1D293143001F827C /* LFO.cpp */; };
+		6F17E6FD1D293143001F827C /* LFO.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F17E6EE1D293143001F827C /* LFO.h */; };
+		6F17E6FE1D293143001F827C /* LFO.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F17E6EE1D293143001F827C /* LFO.h */; };
 		6F2943081D2927FC00ABD1C6 /* ADSR.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F2943001D2927FC00ABD1C6 /* ADSR.cpp */; };
 		6F2943091D2927FC00ABD1C6 /* ADSR.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F2943001D2927FC00ABD1C6 /* ADSR.cpp */; };
 		6F29430A1D2927FC00ABD1C6 /* ADSR.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F2943001D2927FC00ABD1C6 /* ADSR.cpp */; };
@@ -723,6 +739,10 @@
 		52FBBED00D0CF139001C8B8A /* RaspberryJammer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = RaspberryJammer.cpp; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
 		52FBBED20D0CF13D001C8B8A /* RaspberryJammer.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = RaspberryJammer.h; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
 		52FBBED30D0CF143001C8B8A /* resource.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = resource.h; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
+		6F17E6EB1D293142001F827C /* FilterButterworth24db.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FilterButterworth24db.cpp; sourceTree = "<group>"; };
+		6F17E6EC1D293143001F827C /* FilterButterworth24db.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterButterworth24db.h; sourceTree = "<group>"; };
+		6F17E6ED1D293143001F827C /* LFO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LFO.cpp; sourceTree = "<group>"; };
+		6F17E6EE1D293143001F827C /* LFO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFO.h; sourceTree = "<group>"; };
 		6F2943001D2927FC00ABD1C6 /* ADSR.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADSR.cpp; sourceTree = "<group>"; };
 		6F2943011D2927FC00ABD1C6 /* ADSR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSR.h; sourceTree = "<group>"; };
 		6F2943021D2927FC00ABD1C6 /* FrameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameData.h; sourceTree = "<group>"; };
@@ -827,6 +847,10 @@
 				6F2943031D2927FC00ABD1C6 /* MidiNotes.h */,
 				6F2943041D2927FC00ABD1C6 /* StringVoice.cpp */,
 				6F2943051D2927FC00ABD1C6 /* StringVoice.h */,
+				6F17E6EB1D293142001F827C /* FilterButterworth24db.cpp */,
+				6F17E6EC1D293143001F827C /* FilterButterworth24db.h */,
+				6F17E6ED1D293143001F827C /* LFO.cpp */,
+				6F17E6EE1D293143001F827C /* LFO.h */,
 				6F2943061D2927FC00ABD1C6 /* Synth.cpp */,
 				6F2943071D2927FC00ABD1C6 /* Synth.hpp */,
 				6F2943261D29283B00ABD1C6 /* Voice.h */,
@@ -1438,6 +1462,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F17E6FE1D293143001F827C /* LFO.h in Headers */,
 				4F3AE17B12C0E5E2001FD7A4 /* resource.h in Headers */,
 				4F3AE17C12C0E5E2001FD7A4 /* RaspberryJammer.h in Headers */,
 				4FF016F7134E14E2001447BA /* mutex.h in Headers */,
@@ -1477,6 +1502,7 @@
 				6F2943111D2927FC00ABD1C6 /* FrameData.h in Headers */,
 				6F29430F1D2927FC00ABD1C6 /* ADSR.h in Headers */,
 				4F78DA0713B63CD90032E0F3 /* IPlugAU.h in Headers */,
+				6F17E6F61D293143001F827C /* FilterButterworth24db.h in Headers */,
 				4F3EE94913B65A350097B791 /* IPlugOSDetect.h in Headers */,
 				4FDA440913F3E4F2000B4551 /* IBitmapMonoText.h in Headers */,
 				4FA88B931444E4C4006CB8DA /* dfx-au-utilities.h in Headers */,
@@ -1509,9 +1535,11 @@
 				4F78DA9013B640050032E0F3 /* swell-functions.h in Headers */,
 				4F78DA9113B640050032E0F3 /* swell-internal.h in Headers */,
 				4F78DA9213B640050032E0F3 /* swell-types.h in Headers */,
+				6F17E6FD1D293143001F827C /* LFO.h in Headers */,
 				4F78DA9313B640050032E0F3 /* aeffect.h in Headers */,
 				4F78DA9413B640050032E0F3 /* aeffectx.h in Headers */,
 				4F78DA9513B640050032E0F3 /* IPlug_include_in_plug_hdr.h in Headers */,
+				6F17E6F51D293143001F827C /* FilterButterworth24db.h in Headers */,
 				4F78DA9613B640050032E0F3 /* IPlug_include_in_plug_src.h in Headers */,
 				4F78DA9713B640050032E0F3 /* IControl.h in Headers */,
 				4F78DA9813B640050032E0F3 /* IKeyboardControl.h in Headers */,
@@ -1894,6 +1922,7 @@
 				4F78D9BD13B63BA50032E0F3 /* Hosts.cpp in Sources */,
 				4F78D9BF13B63BA50032E0F3 /* IGraphicsMac.mm in Sources */,
 				6F29431D1D2927FC00ABD1C6 /* Synth.cpp in Sources */,
+				6F17E6F01D293143001F827C /* FilterButterworth24db.cpp in Sources */,
 				4F78D9C013B63BA50032E0F3 /* IGraphics.cpp in Sources */,
 				4F78D9C113B63BA50032E0F3 /* IGraphicsCarbon.cpp in Sources */,
 				4F78D9C213B63BA50032E0F3 /* IGraphicsCocoa.mm in Sources */,
@@ -1904,6 +1933,7 @@
 				4F78D9F313B63C6A0032E0F3 /* IPlugVST.cpp in Sources */,
 				6F29432E1D292C2400ABD1C6 /* Oscillator.cpp in Sources */,
 				4FDA440C13F3E4F2000B4551 /* IBitmapMonoText.cpp in Sources */,
+				6F17E6F81D293143001F827C /* LFO.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1920,9 +1950,11 @@
 				4F78D94D13B63BA50032E0F3 /* IGraphicsMac.mm in Sources */,
 				4F78D94E13B63BA50032E0F3 /* IGraphics.cpp in Sources */,
 				4F78D94F13B63BA50032E0F3 /* IGraphicsCarbon.cpp in Sources */,
+				6F17E6FA1D293143001F827C /* LFO.cpp in Sources */,
 				4F78D95013B63BA50032E0F3 /* IGraphicsCocoa.mm in Sources */,
 				6F29430B1D2927FC00ABD1C6 /* ADSR.cpp in Sources */,
 				4F78D95313B63BA50032E0F3 /* Log.cpp in Sources */,
+				6F17E6F21D293143001F827C /* FilterButterworth24db.cpp in Sources */,
 				4F78D95513B63BA50032E0F3 /* IPopupMenu.cpp in Sources */,
 				6F2943381D292C2400ABD1C6 /* PolysynthVoice.cpp in Sources */,
 				4F78D95C13B63BA50032E0F3 /* IParam.cpp in Sources */,
@@ -1955,6 +1987,7 @@
 				4F7F5C5813E95EC8002918FD /* Log.cpp in Sources */,
 				4F7F5C5913E95EC8002918FD /* IPopupMenu.cpp in Sources */,
 				6F2943311D292C2400ABD1C6 /* Oscillator.cpp in Sources */,
+				6F17E6F31D293143001F827C /* FilterButterworth24db.cpp in Sources */,
 				4F7F5C5A13E95EC8002918FD /* IParam.cpp in Sources */,
 				4F7F5C5B13E95EC8002918FD /* IControl.cpp in Sources */,
 				4F7F5C7113E95FB2002918FD /* IPlugRTAS.cpp in Sources */,
@@ -1966,6 +1999,7 @@
 				6F2943391D292C2400ABD1C6 /* PolysynthVoice.cpp in Sources */,
 				4F7F5CB213E9607A002918FD /* IPlugProcess.cpp in Sources */,
 				4F7F5CB313E9607A002918FD /* IPlugProcessRTAS.cpp in Sources */,
+				6F17E6FB1D293143001F827C /* LFO.cpp in Sources */,
 				4FDA440713F3E4F2000B4551 /* IBitmapMonoText.cpp in Sources */,
 				4F79A34E146304CD00744AED /* IPlugProcessAS.cpp in Sources */,
 			);
@@ -1993,10 +2027,12 @@
 				4F9828C5140A9EB700F3FCC1 /* memorystream.cpp in Sources */,
 				6F2943371D292C2400ABD1C6 /* PolysynthVoice.cpp in Sources */,
 				4F9828C6140A9EB700F3FCC1 /* pluginview.cpp in Sources */,
+				6F17E6F91D293143001F827C /* LFO.cpp in Sources */,
 				4F9828C7140A9EB700F3FCC1 /* macmain.cpp in Sources */,
 				4F9828C8140A9EB700F3FCC1 /* pluginfactoryvst3.cpp in Sources */,
 				6F2943161D2927FC00ABD1C6 /* StringVoice.cpp in Sources */,
 				4F9828C9140A9EB700F3FCC1 /* vstaudioeffect.cpp in Sources */,
+				6F17E6F11D293143001F827C /* FilterButterworth24db.cpp in Sources */,
 				4F9828CA140A9EB700F3FCC1 /* vstbus.cpp in Sources */,
 				4F9828CB140A9EB700F3FCC1 /* vstcomponent.cpp in Sources */,
 				6F29432F1D292C2400ABD1C6 /* Oscillator.cpp in Sources */,
@@ -2036,11 +2072,13 @@
 				4FB600231567CB0A0020189A /* IParam.cpp in Sources */,
 				4FB600241567CB0A0020189A /* IControl.cpp in Sources */,
 				6F2943321D292C2400ABD1C6 /* Oscillator.cpp in Sources */,
+				6F17E6FC1D293143001F827C /* LFO.cpp in Sources */,
 				4FB600251567CB0A0020189A /* IBitmapMonoText.cpp in Sources */,
 				4FB600261567CB0A0020189A /* AAX_Exports.cpp in Sources */,
 				6F2943211D2927FC00ABD1C6 /* Synth.cpp in Sources */,
 				4FB600271567CB0A0020189A /* IPlugAAX.cpp in Sources */,
 				4FB600281567CB0A0020189A /* IPlugAAX_Describe.cpp in Sources */,
+				6F17E6F41D293143001F827C /* FilterButterworth24db.cpp in Sources */,
 				4FB600291567CB0A0020189A /* AAX_CIPlugParameters.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2064,6 +2102,7 @@
 				6F2943081D2927FC00ABD1C6 /* ADSR.cpp in Sources */,
 				4F78D8C413B63A700032E0F3 /* RtAudio.cpp in Sources */,
 				6F2943141D2927FC00ABD1C6 /* StringVoice.cpp in Sources */,
+				6F17E6F71D293143001F827C /* LFO.cpp in Sources */,
 				4F78D8C513B63A700032E0F3 /* RtMidi.cpp in Sources */,
 				4F78D90A13B63BA50032E0F3 /* IPlugStandalone.cpp in Sources */,
 				4F78D90B13B63BA50032E0F3 /* IPlugBase.cpp in Sources */,
@@ -2071,6 +2110,7 @@
 				4F78D90D13B63BA50032E0F3 /* Hosts.cpp in Sources */,
 				4F78D90F13B63BA50032E0F3 /* IGraphicsMac.mm in Sources */,
 				4F78D91013B63BA50032E0F3 /* IGraphics.cpp in Sources */,
+				6F17E6EF1D293143001F827C /* FilterButterworth24db.cpp in Sources */,
 				4F78D91113B63BA50032E0F3 /* IGraphicsCarbon.cpp in Sources */,
 				6F2943351D292C2400ABD1C6 /* PolysynthVoice.cpp in Sources */,
 				4F78D91213B63BA50032E0F3 /* IGraphicsCocoa.mm in Sources */,

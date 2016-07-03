@@ -14,25 +14,35 @@
 #include "MidiNotes.h"
 #include "PolysynthVoice.h"
 
-#ifndef M_PI
-#define M_PI  (3.14159265)
-#endif
-
 Synth::Synth()
   : mGainL(1.),
     mGainR(1.),
     mNoteGain(0.),
     mPhase(0),
-    mSampleRate(44100.0),
-    mFreq(440.)
+    mSampleRate(44100.),
+    mFreq(440.),
+    mCutoffVal(8800.),
+    mResonanceVal(0.)
 {
+    this->SetFilterParams(mCutoffVal, mResonanceVal);
+    this->filterLfo.SetParams(1.0f, 0.2f);
+    
     for (int i=0; i < this->numVoices; i++) {
         this->voices[i] = new PolysynthVoice();
     }
 }
 
+Synth::~Synth()
+{
+    for (int i=0; i < this->numVoices; i++) {
+        delete this->voices[i];
+    }
+}
+
 FrameData Synth::NextFrame()
 {
+    this->UpdateFilterParams();
+    
     FrameData currentFrame = FrameData(0.0f, 0.0f);
     float activeVoices = 0;
     
@@ -45,7 +55,7 @@ FrameData Synth::NextFrame()
         }
     }
     
-    return currentFrame * mGainL;
+    return this->filter.Run(currentFrame * mGainL);
 }
 
 void Synth::WriteFrames(unsigned long numFrames, double* out)
@@ -81,6 +91,18 @@ void Synth::OnNoteOff(int noteNumber, int velocity)
             voice->NoteOff();
         }
     }
+}
+
+void Synth::SetFilterParams(double cutoff, double q)
+{
+    this->filter.Set(cutoff, q);
+}
+
+void Synth::UpdateFilterParams()
+{
+    double lfoValue = this->filterLfo.NextFrame();
+    double cutoffValue = this->mCutoffVal * ((lfoValue + 1.0f) / 5.0f);
+    this->SetFilterParams(cutoffValue, this->mResonanceVal);
 }
 
 Voice* Synth::FindFreeVoice()
