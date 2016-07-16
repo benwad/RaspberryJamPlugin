@@ -27,6 +27,12 @@ class StringVoice : public Voice
 		void NoteOff();
 		bool IsActive();
 		int GetNoteNumber();
+        void SetEnvelopeParams(
+                                   int attack,
+                                   int decay,
+                                   double sustain,
+                                   int release
+                               );
 
         void Reset(); // Reset the buffer
 };

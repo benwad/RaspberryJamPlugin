@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
+#include <math.h>
 
 #include "FrameData.h"
 #include "MidiNotes.h"
@@ -24,6 +25,10 @@ StringVoice::StringVoice()
 FrameData StringVoice::NextFrame()
 {
     double frame = 0.0f;
+    
+//    if (isnan(this->currentFrame)) {
+//        std::cout << "nan" << std::endl;
+//    }
 
     buffer[this->currentFrame] = \
         ((buffer[this->currentFrame] + buffer[this->currentFrame+1]) / 2.0f) * this->feedbackValue;
@@ -81,5 +86,15 @@ void StringVoice::Reset()
 //    std::copy(std::begin(this->refBuffer), std::end(this->refBuffer), this->buffer);
     this->currentFrame = 0;
     this->needsReset = false;
+}
+
+void StringVoice::SetEnvelopeParams(
+                       int attack,
+                       int decay,
+                       double sustain,
+                       int release
+                       )
+{
+    this->envelope.SetParams(attack, decay, sustain, release);
 }
 

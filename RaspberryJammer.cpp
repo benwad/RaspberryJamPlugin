@@ -21,6 +21,13 @@ enum EParams
   kGainR,
   kMode,
   kFilterCutoff,
+  kFilterResonance,
+  kEnvAttack,
+  kEnvDecay,
+  kEnvSustain,
+  kEnvRelease,
+  kLfoRate,
+  kLfoDepth,
   kNumParams
 };
 
@@ -41,7 +48,14 @@ RaspberryJammer::RaspberryJammer(IPlugInstanceInfo instanceInfo)
   //arguments are: name, defaultVal, minVal, maxVal, step, label
   GetParam(kGainL)->InitDouble("GainL", -12.0, -70.0, 12.0, 0.1, "dB");
   GetParam(kGainR)->InitDouble("GainR", -12.0, -70.0, 12.0, 0.1, "dB");
-  GetParam(kFilterCutoff)->InitDouble("Cutoff", 16000., 0., 44100., 5.);
+  GetParam(kFilterCutoff)->InitDouble("Cutoff", 440., 0., 12000., 1.);
+  GetParam(kFilterResonance)->InitDouble("Q", 0.1, 0.0, 1.0, 0.01);
+  GetParam(kLfoRate)->InitDouble("LFO Rate", 0.5, 0.001, 20.0, 0.001);
+  GetParam(kLfoDepth)->InitDouble("LFO Depth", 1., 0.0, 1000., 0.0001);
+  GetParam(kEnvAttack)->InitInt("Env Attack", 300, 0, 100000);
+  GetParam(kEnvDecay)->InitInt("Env Decay", 1000, 0, 100000);
+  GetParam(kEnvSustain)->InitDouble("Env Sustain", 1., 0., 1., 0.01);
+  GetParam(kEnvRelease)->InitInt("Env Release", 2000, 0, 100000);
   GetParam(kMode)->InitEnum("Mode", 0, 6);
   GetParam(kMode)->SetDisplayText(0, "a");
   GetParam(kMode)->SetDisplayText(1, "b");
@@ -58,8 +72,27 @@ RaspberryJammer::RaspberryJammer(IPlugInstanceInfo instanceInfo)
   IBitmap regular = pGraphics->LoadIBitmap(WHITE_KEY_ID, WHITE_KEY_FN, 6);
   IBitmap sharp   = pGraphics->LoadIBitmap(BLACK_KEY_ID, BLACK_KEY_FN);
   
+  // Filter knobs
   mCutoffKnob = new IKnobMultiControl(this, kFilterCutoffX, kFilterCutoffY, kFilterCutoff, &knob);
   pGraphics->AttachControl(mCutoffKnob);
+  mResonanceKnob = new IKnobMultiControl(this, kFilterResonanceX, kFilterResonanceY, kFilterResonance, &knob);
+  pGraphics->AttachControl(mResonanceKnob);
+  
+  // LFO knobs
+  mLfoRateKnob = new IKnobMultiControl(this, kLfoRateX, kLfoRateY, kLfoRate, &knob);
+  pGraphics->AttachControl(mLfoRateKnob);
+  mLfoDepthKnob = new IKnobMultiControl(this, kLfoDepthX, kLfoDepthY, kLfoDepth, &knob);
+  pGraphics->AttachControl(mLfoDepthKnob);
+  
+  // ADSR envelope knobs
+  mEnvAttackKnob = new IKnobMultiControl(this, kEnvAttackX, kEnvAttackY, kEnvAttack, &knob);
+  pGraphics->AttachControl(mEnvAttackKnob);
+  mEnvDecayKnob = new IKnobMultiControl(this, kEnvDecayX, kEnvDecayY, kEnvDecay, &knob);
+  pGraphics->AttachControl(mEnvDecayKnob);
+  mEnvSustainKnob = new IKnobMultiControl(this, kEnvSustainX, kEnvSustainY, kEnvSustain, &knob);
+  pGraphics->AttachControl(mEnvSustainKnob);
+  mEnvReleaseKnob = new IKnobMultiControl(this, kEnvReleaseX, kEnvReleaseY, kEnvRelease, &knob);
+  pGraphics->AttachControl(mEnvReleaseKnob);
 
   //                    C#     D#          F#      G#      A#
   int coords[12] = { 0, 7, 12, 20, 24, 36, 43, 48, 56, 60, 69, 72 };
@@ -150,7 +183,7 @@ void RaspberryJammer::ProcessDoubleReplacing(double** inputs, double** outputs, 
     FrameData nextFrame = this->synth.NextFrame();
     *out1 = nextFrame.left_phase;
     *out2 = nextFrame.right_phase;
-
+    
 //    *out1 = sin( 2. * M_PI * mFreq * mPhase / mSampleRate ) * mGainLSmoother.Process(mGainL * mNoteGain);
 //    *out2 = sin( 2. * M_PI * mFreq * 1.01 * (mPhase++) / mSampleRate ) * mGainRSmoother.Process(mGainR * mNoteGain);
 
@@ -168,11 +201,13 @@ void RaspberryJammer::ProcessDoubleReplacing(double** inputs, double** outputs, 
   mPrevL = peakL;
   mPrevR = peakR;
 
+  /*
   if (GetGUI())
   {
     GetGUI()->SetControlFromPlug(mMeterIdx_L, peakL);
     GetGUI()->SetControlFromPlug(mMeterIdx_R, peakR);
   }
+   */
 
   mMidiQueue.Flush(nFrames);
 }
@@ -200,8 +235,28 @@ void RaspberryJammer::OnParamChange(int paramIdx)
       mGainR = GetParam(kGainR)->DBToAmp();
       break;
     case kFilterCutoff:
-      std::cout << GetParam(kFilterCutoff)->Value() << std::endl;
       this->synth.SetFilterCutoff(GetParam(kFilterCutoff)->Value());
+      break;
+    case kFilterResonance:
+      this->synth.SetFilterResonance(GetParam(kFilterResonance)->Value());
+      break;
+    case kEnvAttack:
+      this->synth.SetEnvAttack(GetParam(kEnvAttack)->Value());
+      break;
+    case kEnvDecay:
+      this->synth.SetEnvDecay(GetParam(kEnvDecay)->Value());
+      break;
+    case kEnvSustain:
+      this->synth.SetEnvSustain(GetParam(kEnvSustain)->Value());
+      break;
+    case kEnvRelease:
+      this->synth.SetEnvRelease(GetParam(kEnvRelease)->Value());
+      break;
+    case kLfoRate:
+      this->synth.SetLfoRate(GetParam(kLfoRate)->Value());
+      break;
+    case kLfoDepth:
+      this->synth.SetLfoDepth(GetParam(kLfoDepth)->Value());
       break;
     default:
       break;

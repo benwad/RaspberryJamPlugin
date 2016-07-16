@@ -33,4 +33,20 @@ struct FrameData
 		);
 	}
 	FrameData operator/ (const double x) { return FrameData(left_phase / x, right_phase / x); }
+    FrameData limit(const double x) {
+        if (left_phase > x) {
+            left_phase = x;
+        }
+        else if (left_phase < -x) {
+            left_phase = -x;
+        }
+        if (right_phase > x) {
+            right_phase = x;
+        }
+        else if (right_phase < -x) {
+            right_phase = -x;
+        }
+        
+        return FrameData(left_phase, right_phase);
+    }
 };

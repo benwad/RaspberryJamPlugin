@@ -31,6 +31,8 @@ private:
     int mPhase;
     double mGainL, mGainR;
     double mCutoffVal, mResonanceVal;
+    int mEnvAttack, mEnvDecay, mEnvRelease;
+    double mEnvSustain;
     
 public:
     Synth();
@@ -46,6 +48,12 @@ public:
     void SetFilterParams(double cutoff, double q);
     void SetFilterCutoff(double cutoff);
     void SetFilterResonance(double q);
+    void SetEnvAttack(int pAttack) { this->mEnvAttack = pAttack; }
+    void SetEnvDecay(int pDecay) { this->mEnvDecay = pDecay; }
+    void SetEnvSustain(double pSustain) { this->mEnvSustain = pSustain; }
+    void SetEnvRelease(int pRelease) { this->mEnvRelease = pRelease; }
+    void SetLfoRate(double pRate) { this->filterLfo.SetWavelength(pRate); }
+    void SetLfoDepth(double pDepth) { this->filterLfo.SetIntensity(pDepth); }
     void SetFrequency(double pFreq) { this->mFreq = pFreq; }
     void SetGain(double pGain) { this->mNoteGain = pGain; }
     void SetSampleRate(double pSampleRate) { this->mSampleRate = pSampleRate; }

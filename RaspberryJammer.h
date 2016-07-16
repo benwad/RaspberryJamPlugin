@@ -38,7 +38,18 @@ public:
 private:
   IBitmapOverlayControl* mAboutBox;
   IControl* mKeyboard;
+  
+  // Filter knobs
   IControl* mCutoffKnob;
+  IControl* mResonanceKnob;
+  
+  // ADSR envelope knobs
+  IControl* mEnvAttackKnob;
+  IControl* mEnvDecayKnob;
+  IControl* mEnvSustainKnob;
+  IControl* mEnvReleaseKnob;
+  IControl* mLfoRateKnob;
+  IControl* mLfoDepthKnob;
   
   int mMeterIdx_L, mMeterIdx_R;
 
@@ -67,8 +78,25 @@ enum ELayout
   kKeybX = 1,
   kKeybY = 233,
 
-  kFilterCutoffX = 100,
-  kFilterCutoffY = 100,
+  kFilterCutoffX = 50,
+  kFilterCutoffY = 40,
+  kFilterResonanceX = 109,
+  kFilterResonanceY = 40,
+  
+  kEnvAttackX = 50,
+  kEnvAttackY = 130,
+  kEnvDecayX = 109,
+  kEnvDecayY = 130,
+  kEnvSustainX = 168,
+  kEnvSustainY = 130,
+  kEnvReleaseX = 227,
+  kEnvReleaseY = 130,
+  
+  kLfoRateX = 168,
+  kLfoRateY = 40,
+  kLfoDepthX = 227,
+  kLfoDepthY = 40,
+  
   kKnobFrames = 60
 };
 

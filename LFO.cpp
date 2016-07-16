@@ -3,14 +3,17 @@
 #include "Oscillator.h"
 
 #include <math.h>
+#include <iostream>
 
 void LFO::SetWavelength(double wavelength)
 {
+    std::cout << "Wavelength " << wavelength << std::endl;
 	this->phaseIncrement = wavelength / SAMPLE_RATE;
 }
 
 void LFO::SetIntensity(double intensity)
 {
+    std::cout << "Depth " << intensity << std::endl;
 	this->intensity = intensity;
 }
 

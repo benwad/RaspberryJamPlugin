@@ -38,6 +38,16 @@ void PolysynthVoice::SetNoteNumber(int noteNumber)
 	}
 }
 
+void PolysynthVoice::SetEnvelopeParams(
+                       int attack,
+                       int decay,
+                       double sustain,
+                       int release
+                       )
+{
+    this->envelope.SetParams(attack, decay, sustain, release);
+}
+
 int PolysynthVoice::GetNoteNumber()
 {
 	return this->noteNumber;

@@ -12,6 +12,7 @@
 #include "Synth.hpp"
 
 #include "MidiNotes.h"
+//#include "StringVoice.h"
 #include "PolysynthVoice.h"
 
 Synth::Synth()
@@ -55,6 +56,8 @@ FrameData Synth::NextFrame()
         }
     }
     
+    currentFrame.limit(1.0);
+    
     return this->filter.Run(currentFrame * mGainL);
 }
 
@@ -82,6 +85,7 @@ void Synth::OnNoteOn(int noteNumber, int velocity)
     // TODO: Handle lack of a new voice gracefully
     // (reuse an old one or something)
     if (voice) {
+        voice->SetEnvelopeParams(mEnvAttack, mEnvDecay, mEnvSustain, mEnvRelease);
         voice->SetNoteNumber(noteNumber);
         voice->NoteOn();
     }
@@ -105,18 +109,18 @@ void Synth::SetFilterParams(double cutoff, double q)
 void Synth::SetFilterCutoff(double cutoff)
 {
     mCutoffVal = cutoff;
-    this->SetFilterParams(mCutoffVal, mResonanceVal);
+    std::cout << "Cutoff: " << cutoff << std::endl;
 }
 
 void Synth::SetFilterResonance(double q) {
     mResonanceVal = q;
-    this->SetFilterParams(mCutoffVal, mResonanceVal);
 }
 
 void Synth::UpdateFilterParams()
 {
     double lfoValue = this->filterLfo.NextFrame();
-    double cutoffValue = this->mCutoffVal * ((lfoValue + 1.0f) / 5.0f);
+//    std::cout << lfoValue << std::endl;
+    double cutoffValue = this->mCutoffVal + lfoValue;
     this->SetFilterParams(cutoffValue, this->mResonanceVal);
 }
 

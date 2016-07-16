@@ -56,7 +56,7 @@
 #define BLACK_KEY_ID        105
 
 // Image resource locations for this plug.
-#define KNOB_FN       "resources/img/knob.png"
+#define KNOB_FN       "resources/img/wbox-knob1.png"
 #define BG_FN         "resources/img/bg_new.png"
 #define ABOUTBOX_FN   "resources/img/about.png"
 #define WHITE_KEY_FN  "resources/img/wk.png"

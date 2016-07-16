@@ -15,6 +15,12 @@ class PolysynthVoice : public Voice {
         ~PolysynthVoice() {};
 		FrameData NextFrame();
 		void SetNoteNumber(int noteNumber);
+        void SetEnvelopeParams(
+                                int attack,
+                                int decay,
+                                double sustain,
+                                int release
+                               );
 		void NoteOn();
 		void NoteOff();
 		bool IsActive();
