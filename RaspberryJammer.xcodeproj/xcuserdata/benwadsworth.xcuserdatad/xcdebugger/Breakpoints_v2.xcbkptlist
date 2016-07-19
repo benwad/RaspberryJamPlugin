@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RaspberryJammer.cpp"
-            timestampString = "489264663.860963"
+            timestampString = "490652897.35642"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "123"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RaspberryJammer.cpp"
-            timestampString = "489264663.860963"
+            timestampString = "490652897.35642"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "183"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RaspberryJammer.cpp"
-            timestampString = "490373987.934304"
+            timestampString = "490652897.35642"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "241"
@@ -122,12 +122,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RaspberryJammer.cpp"
-            timestampString = "490373987.934304"
+            timestampString = "490652897.35642"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "207"
             endingLineNumber = "207"
-            landmarkName = "RaspberryJammer::ProcessDoubleReplacing(double** inputs, double** outputs, int nFrames)"
+            landmarkName = "RaspberryJammer::Reset()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../WDL/IPlug/IPlugBase.cpp"
+            timestampString = "490652832.472675"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "610"
+            endingLineNumber = "610"
+            landmarkName = "IPlugBase::MakeDefaultPreset(char* name, int nPresets)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

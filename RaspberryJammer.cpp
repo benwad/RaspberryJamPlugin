@@ -7,7 +7,7 @@
 
 #include <iostream>
 
-const int kNumPrograms = 8;
+const int kNumPrograms = 2;
 
 #define PITCH 440.
 
@@ -19,7 +19,6 @@ enum EParams
 {
   kGainL = 0,
   kGainR,
-  kMode,
   kFilterCutoff,
   kFilterResonance,
   kEnvAttack,
@@ -56,13 +55,6 @@ RaspberryJammer::RaspberryJammer(IPlugInstanceInfo instanceInfo)
   GetParam(kEnvDecay)->InitInt("Env Decay", 1000, 0, 100000);
   GetParam(kEnvSustain)->InitDouble("Env Sustain", 1., 0., 1., 0.01);
   GetParam(kEnvRelease)->InitInt("Env Release", 2000, 0, 100000);
-  GetParam(kMode)->InitEnum("Mode", 0, 6);
-  GetParam(kMode)->SetDisplayText(0, "a");
-  GetParam(kMode)->SetDisplayText(1, "b");
-  GetParam(kMode)->SetDisplayText(2, "c");
-  GetParam(kMode)->SetDisplayText(3, "d");
-  GetParam(kMode)->SetDisplayText(4, "e");
-  GetParam(kMode)->SetDisplayText(5, "f");
 
   IGraphics* pGraphics = MakeGraphics(this, kWidth, kHeight);
   pGraphics->AttachBackground(BG_ID, BG_FN);
@@ -106,7 +98,7 @@ RaspberryJammer::RaspberryJammer(IPlugInstanceInfo instanceInfo)
   AttachGraphics(pGraphics);
 
   //MakePreset("preset 1", ... );
-  MakeDefaultPreset((char *) "-", kNumPrograms);
+  this->CreatePresets();
 }
 
 RaspberryJammer::~RaspberryJammer() {}
@@ -317,4 +309,61 @@ bool RaspberryJammer::HostRequestingAboutBox()
     mAboutBox->Hide(false);
   }
   return true;
+}
+
+void RaspberryJammer::CreatePreset(
+        char* pName,
+        double pGainL,
+        double pGainR,
+        double pFilterCutoff,
+        double pFilterResonance,
+        int pEnvAttack,
+        int pEnvDecay,
+        double pEnvSustain,
+        int pEnvRelease,
+        double pLfoRate,
+        double pLfoDepth)
+{
+  MakePreset(
+             pName,
+             pGainL,
+             pGainR,
+             pFilterCutoff,
+             pFilterResonance,
+             pEnvAttack,
+             pEnvDecay,
+             pEnvSustain,
+             pEnvRelease,
+             pLfoRate,
+             pLfoDepth
+  );
+}
+
+void RaspberryJammer::CreatePresets()
+{
+  this->CreatePreset("default",
+                     -12., // kGainL
+                     -12., // kGainR
+                     440., // kFilterCutoff
+                     0.1, // kFilterResonance
+                     300, // kEnvAttack
+                     1000, // kEnvDecay
+                     1., // kEnvSustain
+                     2000, // kEnvRelease
+                     0.5, // kLfoRate
+                     1. // kLfoDepth
+                     );
+
+  this->CreatePreset("preset1",
+                     -12., // kGainL
+                     -12., // kGainR
+                     1200., // kFilterCutoff
+                     0.1, // kFilterResonance
+                     10000, // kEnvAttack
+                     1000, // kEnvDecay
+                     1., // kEnvSustain
+                     2000, // kEnvRelease
+                     0.5, // kLfoRate
+                     1. // kLfoDepth
+                     );
 }

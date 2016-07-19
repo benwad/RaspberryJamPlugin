@@ -34,6 +34,19 @@ public:
   int GetNumKeys();
   bool GetKeyStatus(int key);
   void ProcessMidiMsg(IMidiMsg* pMsg);
+  void CreatePreset(
+                    char* pName,
+                    double pGainL,
+                    double pGainR,
+                    double pFilterCutoff,
+                    double pFilterResonance,
+                    int pEnvAttack,
+                    int pEnvDecay,
+                    double pEnvSustain,
+                    int pEnvRelease,
+                    double pLfoRate,
+                    double pLfoDepth);
+  void CreatePresets();
 
 private:
   IBitmapOverlayControl* mAboutBox;
