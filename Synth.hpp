@@ -44,6 +44,9 @@ public:
     void OnNoteOff(int noteNumber, int velocity);
     void UpdateFilterParams();
     Voice* FindFreeVoice();
+    
+    LFO GetFilterLfo() { return this->filterLfo; }
+    CFilterButterworth24db GetFilter() { return this->filter; }
 
     void SetFilterParams(double cutoff, double q);
     void SetFilterCutoff(double cutoff);
