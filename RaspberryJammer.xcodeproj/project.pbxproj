@@ -383,6 +383,12 @@
 		6F8892531D622735001C1AD4 /* NaiveOscillator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F88924C1D622735001C1AD4 /* NaiveOscillator.cpp */; };
 		6F8892541D622735001C1AD4 /* NaiveOscillator.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 6F88924D1D622735001C1AD4 /* NaiveOscillator.hpp */; };
 		6F8892551D622735001C1AD4 /* NaiveOscillator.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 6F88924D1D622735001C1AD4 /* NaiveOscillator.hpp */; };
+		6F8892571D622E0B001C1AD4 /* Oscillator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F8892561D622E0B001C1AD4 /* Oscillator.cpp */; };
+		6F8892581D622E0B001C1AD4 /* Oscillator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F8892561D622E0B001C1AD4 /* Oscillator.cpp */; };
+		6F8892591D622E0B001C1AD4 /* Oscillator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F8892561D622E0B001C1AD4 /* Oscillator.cpp */; };
+		6F88925A1D622E0B001C1AD4 /* Oscillator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F8892561D622E0B001C1AD4 /* Oscillator.cpp */; };
+		6F88925B1D622E0B001C1AD4 /* Oscillator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F8892561D622E0B001C1AD4 /* Oscillator.cpp */; };
+		6F88925C1D622E0B001C1AD4 /* Oscillator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F8892561D622E0B001C1AD4 /* Oscillator.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -783,6 +789,7 @@
 		6F8892431D622716001C1AD4 /* PolyBLEPOscillator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PolyBLEPOscillator.hpp; sourceTree = "<group>"; };
 		6F88924C1D622735001C1AD4 /* NaiveOscillator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NaiveOscillator.cpp; sourceTree = "<group>"; };
 		6F88924D1D622735001C1AD4 /* NaiveOscillator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NaiveOscillator.hpp; sourceTree = "<group>"; };
+		6F8892561D622E0B001C1AD4 /* Oscillator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Oscillator.cpp; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -1495,6 +1502,7 @@
 			isa = PBXGroup;
 			children = (
 				6F29432A1D292C2400ABD1C6 /* Oscillator.h */,
+				6F8892561D622E0B001C1AD4 /* Oscillator.cpp */,
 				6F8892421D622716001C1AD4 /* PolyBLEPOscillator.cpp */,
 				6F8892431D622716001C1AD4 /* PolyBLEPOscillator.hpp */,
 				6F88924C1D622735001C1AD4 /* NaiveOscillator.cpp */,
@@ -1987,6 +1995,7 @@
 				4F78D9BD13B63BA50032E0F3 /* Hosts.cpp in Sources */,
 				4F78D9BF13B63BA50032E0F3 /* IGraphicsMac.mm in Sources */,
 				6F29431D1D2927FC00ABD1C6 /* Synth.cpp in Sources */,
+				6F8892581D622E0B001C1AD4 /* Oscillator.cpp in Sources */,
 				6F17E6F01D293143001F827C /* FilterButterworth24db.cpp in Sources */,
 				4F78D9C013B63BA50032E0F3 /* IGraphics.cpp in Sources */,
 				4F78D9C113B63BA50032E0F3 /* IGraphicsCarbon.cpp in Sources */,
@@ -2007,6 +2016,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F3AE1A312C0E5E2001FD7A4 /* RaspberryJammer.cpp in Sources */,
+				6F88925A1D622E0B001C1AD4 /* Oscillator.cpp in Sources */,
 				6F8892511D622735001C1AD4 /* NaiveOscillator.cpp in Sources */,
 				4FD16D0E13B634BF001D0217 /* swell-gdi.mm in Sources */,
 				4F78D94513B63BA50032E0F3 /* IPlugBase.cpp in Sources */,
@@ -2065,6 +2075,7 @@
 				4F7F5CB113E9607A002918FD /* IPlugGroup.cpp in Sources */,
 				6F2943391D292C2400ABD1C6 /* PolysynthVoice.cpp in Sources */,
 				4F7F5CB213E9607A002918FD /* IPlugProcess.cpp in Sources */,
+				6F88925B1D622E0B001C1AD4 /* Oscillator.cpp in Sources */,
 				4F7F5CB313E9607A002918FD /* IPlugProcessRTAS.cpp in Sources */,
 				6F17E6FB1D293143001F827C /* LFO.cpp in Sources */,
 				4FDA440713F3E4F2000B4551 /* IBitmapMonoText.cpp in Sources */,
@@ -2082,6 +2093,7 @@
 				4F9828B9140A9EB700F3FCC1 /* IPlugStructs.cpp in Sources */,
 				4F9828BA140A9EB700F3FCC1 /* Hosts.cpp in Sources */,
 				4F9828BB140A9EB700F3FCC1 /* IGraphicsMac.mm in Sources */,
+				6F8892591D622E0B001C1AD4 /* Oscillator.cpp in Sources */,
 				4F9828BC140A9EB700F3FCC1 /* IGraphics.cpp in Sources */,
 				4F9828BD140A9EB700F3FCC1 /* IGraphicsCarbon.cpp in Sources */,
 				4F9828BE140A9EB700F3FCC1 /* IGraphicsCocoa.mm in Sources */,
@@ -2137,6 +2149,7 @@
 				4FB600211567CB0A0020189A /* Log.cpp in Sources */,
 				6F29433A1D292C2400ABD1C6 /* PolysynthVoice.cpp in Sources */,
 				4FB600221567CB0A0020189A /* IPopupMenu.cpp in Sources */,
+				6F88925C1D622E0B001C1AD4 /* Oscillator.cpp in Sources */,
 				6F29430D1D2927FC00ABD1C6 /* ADSR.cpp in Sources */,
 				4FB600231567CB0A0020189A /* IParam.cpp in Sources */,
 				4FB600241567CB0A0020189A /* IControl.cpp in Sources */,
@@ -2170,6 +2183,7 @@
 				4FD16D4713B635C8001D0217 /* swellappmain.mm in Sources */,
 				6F2943081D2927FC00ABD1C6 /* ADSR.cpp in Sources */,
 				4F78D8C413B63A700032E0F3 /* RtAudio.cpp in Sources */,
+				6F8892571D622E0B001C1AD4 /* Oscillator.cpp in Sources */,
 				6F2943141D2927FC00ABD1C6 /* StringVoice.cpp in Sources */,
 				6F17E6F71D293143001F827C /* LFO.cpp in Sources */,
 				4F78D8C513B63A700032E0F3 /* RtMidi.cpp in Sources */,

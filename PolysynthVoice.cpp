@@ -1,4 +1,5 @@
 #include "PolysynthVoice.h"
+#include "PolyBLEPOscillator.hpp"
 #include "NaiveOscillator.hpp"
 
 #include "MidiNotes.h"
@@ -6,7 +7,8 @@
 PolysynthVoice::PolysynthVoice()
 {
     for (int i=0; i < numOscillators; i++) {
-        this->oscillators[i].first = new NaiveOscillator();
+        this->oscillators[i].first = new PolyBLEPOscillator();
+        this->oscillators[i].first->SetOscType(kOscillatorTypeSaw);
     }
 
     // Populate the volumes of the overtones

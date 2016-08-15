@@ -9,6 +9,19 @@
 #ifndef PolyBLEPOscillator_hpp
 #define PolyBLEPOscillator_hpp
 
-#include <stdio.h>
+#include <iostream>
+
+#include "Oscillator.h"
+#include "FrameData.h"
+
+class PolyBLEPOscillator: public Oscillator
+{
+private:
+    double lastOutput;
+    double PolyBlep(double t);
+public:
+    FrameData NextFrame();
+    void SetFrequency(double frequency);
+};
 
 #endif /* PolyBLEPOscillator_hpp */
