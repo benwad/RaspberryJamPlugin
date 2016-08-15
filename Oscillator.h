@@ -4,24 +4,12 @@
 #define TWO_PI 6.2831853
 
 #include "FrameData.h"
+#include "Oscillator.h"
 
-enum OscType {
-	kOscillatorTypeSine,
-	kOscillatorTypeSaw,
-	kOscillatorTypeSquare
-};
 
-class Oscillator {
-
-	private:
-		FrameData currentFrame;
-		double phase = 0.0f;
-		double increment;
-		OscType oscType = kOscillatorTypeSaw;
-
-	public:
-		FrameData NextFrame();
-		void SetOscType(OscType oscType) { this->oscType = oscType; }
-		void SetFrequency(double frequency);
-
+class Oscillator
+{
+public:
+    virtual FrameData NextFrame()=0;
+    virtual void SetFrequency(double frequency)=0;
 };

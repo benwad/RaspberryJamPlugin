@@ -1,9 +1,14 @@
 #include "PolysynthVoice.h"
+#include "NaiveOscillator.hpp"
 
 #include "MidiNotes.h"
 
 PolysynthVoice::PolysynthVoice()
 {
+    for (int i=0; i < numOscillators; i++) {
+        this->oscillators[i].first = new NaiveOscillator();
+    }
+
     // Populate the volumes of the overtones
 	this->oscillators[0].second = 0.4f;
 	this->oscillators[1].second = 0.2f;
@@ -22,7 +27,7 @@ FrameData PolysynthVoice::NextFrame()
 	FrameData oscMix = FrameData(0.0f, 0.0f);
 
 	for (int i=0; i < numOscillators; i++) {
-		oscMix = oscMix + (oscillators[i].first.NextFrame() * oscillators[i].second);
+		oscMix = oscMix + (oscillators[i].first->NextFrame() * oscillators[i].second);
 	}
 
 	return oscMix * (this->gain * envValue);
@@ -32,9 +37,9 @@ void PolysynthVoice::SetNoteNumber(int noteNumber)
 {
 	this->noteNumber = noteNumber;
 	double fundamental = midiFrequencies[noteNumber];
-	oscillators[0].first.SetFrequency(fundamental);
+	oscillators[0].first->SetFrequency(fundamental);
 	for (int i=1; i < numOscillators; i++) {
-		oscillators[i].first.SetFrequency(fundamental * (i+1));
+		oscillators[i].first->SetFrequency(fundamental * (i+1));
 	}
 }
 

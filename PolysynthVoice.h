@@ -30,5 +30,5 @@ class PolysynthVoice : public Voice {
 		int noteNumber;
 		double gain;
         ADSR envelope;
-		std::pair<Oscillator, double> oscillators[numOscillators];
+		std::pair<Oscillator*, double> oscillators[numOscillators];
 };
