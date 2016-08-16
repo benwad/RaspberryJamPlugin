@@ -389,6 +389,14 @@
 		6F88925A1D622E0B001C1AD4 /* Oscillator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F8892561D622E0B001C1AD4 /* Oscillator.cpp */; };
 		6F88925B1D622E0B001C1AD4 /* Oscillator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F8892561D622E0B001C1AD4 /* Oscillator.cpp */; };
 		6F88925C1D622E0B001C1AD4 /* Oscillator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F8892561D622E0B001C1AD4 /* Oscillator.cpp */; };
+		6F8892601D623CDF001C1AD4 /* MonoSynthVoice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F88925E1D623CDF001C1AD4 /* MonoSynthVoice.cpp */; };
+		6F8892611D623CDF001C1AD4 /* MonoSynthVoice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F88925E1D623CDF001C1AD4 /* MonoSynthVoice.cpp */; };
+		6F8892621D623CDF001C1AD4 /* MonoSynthVoice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F88925E1D623CDF001C1AD4 /* MonoSynthVoice.cpp */; };
+		6F8892631D623CDF001C1AD4 /* MonoSynthVoice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F88925E1D623CDF001C1AD4 /* MonoSynthVoice.cpp */; };
+		6F8892641D623CDF001C1AD4 /* MonoSynthVoice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F88925E1D623CDF001C1AD4 /* MonoSynthVoice.cpp */; };
+		6F8892651D623CDF001C1AD4 /* MonoSynthVoice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F88925E1D623CDF001C1AD4 /* MonoSynthVoice.cpp */; };
+		6F8892661D623CDF001C1AD4 /* MonoSynthVoice.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 6F88925F1D623CDF001C1AD4 /* MonoSynthVoice.hpp */; };
+		6F8892671D623CDF001C1AD4 /* MonoSynthVoice.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 6F88925F1D623CDF001C1AD4 /* MonoSynthVoice.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -790,6 +798,8 @@
 		6F88924C1D622735001C1AD4 /* NaiveOscillator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NaiveOscillator.cpp; sourceTree = "<group>"; };
 		6F88924D1D622735001C1AD4 /* NaiveOscillator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NaiveOscillator.hpp; sourceTree = "<group>"; };
 		6F8892561D622E0B001C1AD4 /* Oscillator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Oscillator.cpp; sourceTree = "<group>"; };
+		6F88925E1D623CDF001C1AD4 /* MonoSynthVoice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MonoSynthVoice.cpp; sourceTree = "<group>"; };
+		6F88925F1D623CDF001C1AD4 /* MonoSynthVoice.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MonoSynthVoice.hpp; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -1478,22 +1488,18 @@
 		6F17E7021D2934F3001F827C /* Synth Engine */ = {
 			isa = PBXGroup;
 			children = (
+				6F88925D1D623CB4001C1AD4 /* Voices */,
 				6F88923F1D62269F001C1AD4 /* Oscillators */,
 				6F2943001D2927FC00ABD1C6 /* ADSR.cpp */,
 				6F2943011D2927FC00ABD1C6 /* ADSR.h */,
 				6F2943021D2927FC00ABD1C6 /* FrameData.h */,
 				6F2943031D2927FC00ABD1C6 /* MidiNotes.h */,
-				6F2943041D2927FC00ABD1C6 /* StringVoice.cpp */,
-				6F2943051D2927FC00ABD1C6 /* StringVoice.h */,
 				6F17E6EB1D293142001F827C /* FilterButterworth24db.cpp */,
 				6F17E6EC1D293143001F827C /* FilterButterworth24db.h */,
 				6F17E6ED1D293143001F827C /* LFO.cpp */,
 				6F17E6EE1D293143001F827C /* LFO.h */,
 				6F2943061D2927FC00ABD1C6 /* Synth.cpp */,
 				6F2943071D2927FC00ABD1C6 /* Synth.hpp */,
-				6F2943261D29283B00ABD1C6 /* Voice.h */,
-				6F29432B1D292C2400ABD1C6 /* PolysynthVoice.cpp */,
-				6F29432C1D292C2400ABD1C6 /* PolysynthVoice.h */,
 			);
 			name = "Synth Engine";
 			sourceTree = "<group>";
@@ -1509,6 +1515,20 @@
 				6F88924D1D622735001C1AD4 /* NaiveOscillator.hpp */,
 			);
 			name = Oscillators;
+			sourceTree = "<group>";
+		};
+		6F88925D1D623CB4001C1AD4 /* Voices */ = {
+			isa = PBXGroup;
+			children = (
+				6F2943041D2927FC00ABD1C6 /* StringVoice.cpp */,
+				6F2943051D2927FC00ABD1C6 /* StringVoice.h */,
+				6F2943261D29283B00ABD1C6 /* Voice.h */,
+				6F29432B1D292C2400ABD1C6 /* PolysynthVoice.cpp */,
+				6F29432C1D292C2400ABD1C6 /* PolysynthVoice.h */,
+				6F88925E1D623CDF001C1AD4 /* MonoSynthVoice.cpp */,
+				6F88925F1D623CDF001C1AD4 /* MonoSynthVoice.hpp */,
+			);
+			name = Voices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1542,6 +1562,7 @@
 				4F78D94413B63BA50032E0F3 /* IPlugBase.h in Headers */,
 				4F78D94613B63BA50032E0F3 /* IGraphicsMac.h in Headers */,
 				4F78D94913B63BA50032E0F3 /* Containers.h in Headers */,
+				6F8892671D623CDF001C1AD4 /* MonoSynthVoice.hpp in Headers */,
 				4F78D94A13B63BA50032E0F3 /* Hosts.h in Headers */,
 				4F78D95113B63BA50032E0F3 /* IGraphicsCocoa.h in Headers */,
 				4F78D95213B63BA50032E0F3 /* Log.h in Headers */,
@@ -1616,6 +1637,7 @@
 				4F78DAA213B640050032E0F3 /* IPlug_Prefix.pch in Headers */,
 				4F78DAA313B640050032E0F3 /* IParam.h in Headers */,
 				4F78DAA413B640050032E0F3 /* IMidiQueue.h in Headers */,
+				6F8892661D623CDF001C1AD4 /* MonoSynthVoice.hpp in Headers */,
 				4F78DAA513B640050032E0F3 /* IGraphicsCarbon.h in Headers */,
 				4F78DAA613B640050032E0F3 /* IGraphics.h in Headers */,
 				6F2943271D29283B00ABD1C6 /* Voice.h in Headers */,
@@ -1993,6 +2015,7 @@
 				6F2943091D2927FC00ABD1C6 /* ADSR.cpp in Sources */,
 				4F78D9BC13B63BA50032E0F3 /* IPlugStructs.cpp in Sources */,
 				4F78D9BD13B63BA50032E0F3 /* Hosts.cpp in Sources */,
+				6F8892611D623CDF001C1AD4 /* MonoSynthVoice.cpp in Sources */,
 				4F78D9BF13B63BA50032E0F3 /* IGraphicsMac.mm in Sources */,
 				6F29431D1D2927FC00ABD1C6 /* Synth.cpp in Sources */,
 				6F8892581D622E0B001C1AD4 /* Oscillator.cpp in Sources */,
@@ -2030,6 +2053,7 @@
 				6F29430B1D2927FC00ABD1C6 /* ADSR.cpp in Sources */,
 				4F78D95313B63BA50032E0F3 /* Log.cpp in Sources */,
 				6F17E6F21D293143001F827C /* FilterButterworth24db.cpp in Sources */,
+				6F8892631D623CDF001C1AD4 /* MonoSynthVoice.cpp in Sources */,
 				4F78D95513B63BA50032E0F3 /* IPopupMenu.cpp in Sources */,
 				6F8892471D622716001C1AD4 /* PolyBLEPOscillator.cpp in Sources */,
 				6F2943381D292C2400ABD1C6 /* PolysynthVoice.cpp in Sources */,
@@ -2057,6 +2081,7 @@
 				6F2943201D2927FC00ABD1C6 /* Synth.cpp in Sources */,
 				4F7F5C5413E95EC8002918FD /* IGraphicsMac.mm in Sources */,
 				4F7F5C5513E95EC8002918FD /* IGraphics.cpp in Sources */,
+				6F8892641D623CDF001C1AD4 /* MonoSynthVoice.cpp in Sources */,
 				4F7F5C5613E95EC8002918FD /* IGraphicsCarbon.cpp in Sources */,
 				6F2943181D2927FC00ABD1C6 /* StringVoice.cpp in Sources */,
 				6F8892481D622716001C1AD4 /* PolyBLEPOscillator.cpp in Sources */,
@@ -2117,6 +2142,7 @@
 				4F9828CB140A9EB700F3FCC1 /* vstcomponent.cpp in Sources */,
 				4F9828CC140A9EB700F3FCC1 /* vstcomponentbase.cpp in Sources */,
 				4F9828CE140A9EB700F3FCC1 /* vstinitiids.cpp in Sources */,
+				6F8892621D623CDF001C1AD4 /* MonoSynthVoice.cpp in Sources */,
 				4F9828CF140A9EB700F3FCC1 /* vstnoteexpressiontypes.cpp in Sources */,
 				4F9828D0140A9EB700F3FCC1 /* vstparameters.cpp in Sources */,
 				4F9828D1140A9EB700F3FCC1 /* vstpresetfile.cpp in Sources */,
@@ -2151,6 +2177,7 @@
 				4FB600221567CB0A0020189A /* IPopupMenu.cpp in Sources */,
 				6F88925C1D622E0B001C1AD4 /* Oscillator.cpp in Sources */,
 				6F29430D1D2927FC00ABD1C6 /* ADSR.cpp in Sources */,
+				6F8892651D623CDF001C1AD4 /* MonoSynthVoice.cpp in Sources */,
 				4FB600231567CB0A0020189A /* IParam.cpp in Sources */,
 				4FB600241567CB0A0020189A /* IControl.cpp in Sources */,
 				6F17E6FC1D293143001F827C /* LFO.cpp in Sources */,
@@ -2193,6 +2220,7 @@
 				4F78D90D13B63BA50032E0F3 /* Hosts.cpp in Sources */,
 				4F78D90F13B63BA50032E0F3 /* IGraphicsMac.mm in Sources */,
 				4F78D91013B63BA50032E0F3 /* IGraphics.cpp in Sources */,
+				6F8892601D623CDF001C1AD4 /* MonoSynthVoice.cpp in Sources */,
 				6F17E6EF1D293143001F827C /* FilterButterworth24db.cpp in Sources */,
 				4F78D91113B63BA50032E0F3 /* IGraphicsCarbon.cpp in Sources */,
 				6F2943351D292C2400ABD1C6 /* PolysynthVoice.cpp in Sources */,

@@ -22,6 +22,13 @@ PolysynthVoice::PolysynthVoice()
 	this->gain = 0.5f;
 }
 
+PolysynthVoice::~PolysynthVoice()
+{
+    for (int i=0; i < numOscillators; i++) {
+        delete this->oscillators[i].first;
+    }
+}
+
 FrameData PolysynthVoice::NextFrame()
 {
 	double envValue = this->envelope.NextFrame();
@@ -29,7 +36,9 @@ FrameData PolysynthVoice::NextFrame()
 	FrameData oscMix = FrameData(0.0f, 0.0f);
 
 	for (int i=0; i < numOscillators; i++) {
-		oscMix = oscMix + (oscillators[i].first->NextFrame() * oscillators[i].second);
+//        if (this->oscillators[i].first) {
+        oscMix = oscMix + (oscillators[i].first->NextFrame() * oscillators[i].second);
+//        }
 	}
 
 	return oscMix * (this->gain * envValue);

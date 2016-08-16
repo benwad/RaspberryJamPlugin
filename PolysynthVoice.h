@@ -12,7 +12,7 @@ class PolysynthVoice : public Voice {
 
     public:
         PolysynthVoice();
-        ~PolysynthVoice() {};
+        ~PolysynthVoice();
 		FrameData NextFrame();
 		void SetNoteNumber(int noteNumber);
         void SetEnvelopeParams(

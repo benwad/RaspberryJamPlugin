@@ -13,7 +13,8 @@
 
 #include "MidiNotes.h"
 //#include "StringVoice.h"
-#include "PolysynthVoice.h"
+//#include "PolysynthVoice.h"
+#include "MonoSynthVoice.hpp"
 
 Synth::Synth()
   : mGainL(1.),
@@ -29,7 +30,7 @@ Synth::Synth()
     this->filterLfo.SetParams(1.0f, 0.2f);
     
     for (int i=0; i < this->numVoices; i++) {
-        this->voices[i] = new PolysynthVoice();
+        this->voices[i] = new MonoSynthVoice();
     }
 }
 
