@@ -397,6 +397,14 @@
 		6F8892651D623CDF001C1AD4 /* MonoSynthVoice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F88925E1D623CDF001C1AD4 /* MonoSynthVoice.cpp */; };
 		6F8892661D623CDF001C1AD4 /* MonoSynthVoice.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 6F88925F1D623CDF001C1AD4 /* MonoSynthVoice.hpp */; };
 		6F8892671D623CDF001C1AD4 /* MonoSynthVoice.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 6F88925F1D623CDF001C1AD4 /* MonoSynthVoice.hpp */; };
+		6FE48BCA1D6CCA350010619C /* IVerticalMeter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FE48BC81D6CCA350010619C /* IVerticalMeter.cpp */; };
+		6FE48BCB1D6CCA350010619C /* IVerticalMeter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FE48BC81D6CCA350010619C /* IVerticalMeter.cpp */; };
+		6FE48BCC1D6CCA350010619C /* IVerticalMeter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FE48BC81D6CCA350010619C /* IVerticalMeter.cpp */; };
+		6FE48BCD1D6CCA350010619C /* IVerticalMeter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FE48BC81D6CCA350010619C /* IVerticalMeter.cpp */; };
+		6FE48BCE1D6CCA350010619C /* IVerticalMeter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FE48BC81D6CCA350010619C /* IVerticalMeter.cpp */; };
+		6FE48BCF1D6CCA350010619C /* IVerticalMeter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FE48BC81D6CCA350010619C /* IVerticalMeter.cpp */; };
+		6FE48BD01D6CCA350010619C /* IVerticalMeter.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 6FE48BC91D6CCA350010619C /* IVerticalMeter.hpp */; };
+		6FE48BD11D6CCA350010619C /* IVerticalMeter.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 6FE48BC91D6CCA350010619C /* IVerticalMeter.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -800,6 +808,8 @@
 		6F8892561D622E0B001C1AD4 /* Oscillator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Oscillator.cpp; sourceTree = "<group>"; };
 		6F88925E1D623CDF001C1AD4 /* MonoSynthVoice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MonoSynthVoice.cpp; sourceTree = "<group>"; };
 		6F88925F1D623CDF001C1AD4 /* MonoSynthVoice.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MonoSynthVoice.hpp; sourceTree = "<group>"; };
+		6FE48BC81D6CCA350010619C /* IVerticalMeter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IVerticalMeter.cpp; sourceTree = "<group>"; };
+		6FE48BC91D6CCA350010619C /* IVerticalMeter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IVerticalMeter.hpp; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -885,6 +895,7 @@
 				52FBBED30D0CF143001C8B8A /* resource.h */,
 				52FBBED20D0CF13D001C8B8A /* RaspberryJammer.h */,
 				52FBBED00D0CF139001C8B8A /* RaspberryJammer.cpp */,
+				6FE48BC51D6CCA0F0010619C /* Controls */,
 				6F17E7021D2934F3001F827C /* Synth Engine */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				32C88E010371C26100C91783 /* Other Sources */,
@@ -1531,6 +1542,15 @@
 			name = Voices;
 			sourceTree = "<group>";
 		};
+		6FE48BC51D6CCA0F0010619C /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				6FE48BC81D6CCA350010619C /* IVerticalMeter.cpp */,
+				6FE48BC91D6CCA350010619C /* IVerticalMeter.hpp */,
+			);
+			name = Controls;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1578,6 +1598,7 @@
 				4F78D95F13B63BA50032E0F3 /* IGraphicsCarbon.h in Headers */,
 				4F78D96013B63BA50032E0F3 /* IGraphics.h in Headers */,
 				6F2943111D2927FC00ABD1C6 /* FrameData.h in Headers */,
+				6FE48BD11D6CCA350010619C /* IVerticalMeter.hpp in Headers */,
 				6F29430F1D2927FC00ABD1C6 /* ADSR.h in Headers */,
 				4F78DA0713B63CD90032E0F3 /* IPlugAU.h in Headers */,
 				6F17E6F61D293143001F827C /* FilterButterworth24db.h in Headers */,
@@ -1635,6 +1656,7 @@
 				6F2943121D2927FC00ABD1C6 /* MidiNotes.h in Headers */,
 				4F78DAA113B640050032E0F3 /* IPlugStructs.h in Headers */,
 				4F78DAA213B640050032E0F3 /* IPlug_Prefix.pch in Headers */,
+				6FE48BD01D6CCA350010619C /* IVerticalMeter.hpp in Headers */,
 				4F78DAA313B640050032E0F3 /* IParam.h in Headers */,
 				4F78DAA413B640050032E0F3 /* IMidiQueue.h in Headers */,
 				6F8892661D623CDF001C1AD4 /* MonoSynthVoice.hpp in Headers */,
@@ -2007,6 +2029,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F20EECB132C69FE0030E34C /* RaspberryJammer.cpp in Sources */,
+				6FE48BCB1D6CCA350010619C /* IVerticalMeter.cpp in Sources */,
 				4FD16D1213B634BF001D0217 /* swell-gdi.mm in Sources */,
 				6F2943151D2927FC00ABD1C6 /* StringVoice.cpp in Sources */,
 				6F88924F1D622735001C1AD4 /* NaiveOscillator.cpp in Sources */,
@@ -2053,6 +2076,7 @@
 				6F29430B1D2927FC00ABD1C6 /* ADSR.cpp in Sources */,
 				4F78D95313B63BA50032E0F3 /* Log.cpp in Sources */,
 				6F17E6F21D293143001F827C /* FilterButterworth24db.cpp in Sources */,
+				6FE48BCD1D6CCA350010619C /* IVerticalMeter.cpp in Sources */,
 				6F8892631D623CDF001C1AD4 /* MonoSynthVoice.cpp in Sources */,
 				4F78D95513B63BA50032E0F3 /* IPopupMenu.cpp in Sources */,
 				6F8892471D622716001C1AD4 /* PolyBLEPOscillator.cpp in Sources */,
@@ -2103,6 +2127,7 @@
 				6F88925B1D622E0B001C1AD4 /* Oscillator.cpp in Sources */,
 				4F7F5CB313E9607A002918FD /* IPlugProcessRTAS.cpp in Sources */,
 				6F17E6FB1D293143001F827C /* LFO.cpp in Sources */,
+				6FE48BCE1D6CCA350010619C /* IVerticalMeter.cpp in Sources */,
 				4FDA440713F3E4F2000B4551 /* IBitmapMonoText.cpp in Sources */,
 				4F79A34E146304CD00744AED /* IPlugProcessAS.cpp in Sources */,
 			);
@@ -2133,6 +2158,7 @@
 				6F2943371D292C2400ABD1C6 /* PolysynthVoice.cpp in Sources */,
 				4F9828C6140A9EB700F3FCC1 /* pluginview.cpp in Sources */,
 				6F17E6F91D293143001F827C /* LFO.cpp in Sources */,
+				6FE48BCC1D6CCA350010619C /* IVerticalMeter.cpp in Sources */,
 				4F9828C7140A9EB700F3FCC1 /* macmain.cpp in Sources */,
 				4F9828C8140A9EB700F3FCC1 /* pluginfactoryvst3.cpp in Sources */,
 				6F2943161D2927FC00ABD1C6 /* StringVoice.cpp in Sources */,
@@ -2182,6 +2208,7 @@
 				4FB600241567CB0A0020189A /* IControl.cpp in Sources */,
 				6F17E6FC1D293143001F827C /* LFO.cpp in Sources */,
 				4FB600251567CB0A0020189A /* IBitmapMonoText.cpp in Sources */,
+				6FE48BCF1D6CCA350010619C /* IVerticalMeter.cpp in Sources */,
 				4FB600261567CB0A0020189A /* AAX_Exports.cpp in Sources */,
 				6F8892491D622716001C1AD4 /* PolyBLEPOscillator.cpp in Sources */,
 				6F2943211D2927FC00ABD1C6 /* Synth.cpp in Sources */,
@@ -2205,6 +2232,7 @@
 				4FD16D3C13B6358C001D0217 /* swell-miscdlg.mm in Sources */,
 				4FD16D3E13B63595001D0217 /* swell-menu.mm in Sources */,
 				4FD16D4013B635A0001D0217 /* swell-misc.mm in Sources */,
+				6FE48BCA1D6CCA350010619C /* IVerticalMeter.cpp in Sources */,
 				4FD16D4213B635AB001D0217 /* swell-wnd.mm in Sources */,
 				4FD16D4413B635B2001D0217 /* swell.cpp in Sources */,
 				4FD16D4713B635C8001D0217 /* swellappmain.mm in Sources */,

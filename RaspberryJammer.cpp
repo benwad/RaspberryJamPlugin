@@ -5,6 +5,8 @@
 #include "IControl.h"
 #include "IKeyboardControl.h"
 
+#include "IVerticalMeter.hpp"
+
 #include <iostream>
 
 const int kNumPrograms = 2;
@@ -27,6 +29,8 @@ enum EParams
   kEnvRelease,
   kLfoRate,
   kLfoDepth,
+  kMeterL,
+  kMeterR,
   kNumParams
 };
 
@@ -58,11 +62,18 @@ RaspberryJammer::RaspberryJammer(IPlugInstanceInfo instanceInfo)
 
   IGraphics* pGraphics = MakeGraphics(this, kWidth, kHeight);
   pGraphics->AttachBackground(BG_ID, BG_FN);
-
+  
+  // Load bitmaps
   IBitmap knob = pGraphics->LoadIBitmap(KNOB_ID, KNOB_FN, kKnobFrames);
-  IText text = IText(14);
+//  IText text = IText(14);
   IBitmap regular = pGraphics->LoadIBitmap(WHITE_KEY_ID, WHITE_KEY_FN, 6);
   IBitmap sharp   = pGraphics->LoadIBitmap(BLACK_KEY_ID, BLACK_KEY_FN);
+  
+  // Create peak meter
+  int meterX = 630;
+  int meterY = 170;
+  mMeterIdx_L = pGraphics->AttachControl(new IVerticalMeter(this, IRECT(meterX, meterY, meterX+10, meterY+100)));
+  mMeterIdx_R = pGraphics->AttachControl(new IVerticalMeter(this, IRECT(meterX+20, meterY, meterX+30, meterY+100)));
   
   // Filter knobs
   mCutoffKnob = new IKnobMultiControl(this, kFilterCutoffX, kFilterCutoffY, kFilterCutoff, &knob);
@@ -86,9 +97,10 @@ RaspberryJammer::RaspberryJammer(IPlugInstanceInfo instanceInfo)
   mEnvReleaseKnob = new IKnobMultiControl(this, kEnvReleaseX, kEnvReleaseY, kEnvRelease, &knob);
   pGraphics->AttachControl(mEnvReleaseKnob);
 
+  // Keyboard
   //                    C#     D#          F#      G#      A#
   int coords[12] = { 0, 7, 12, 20, 24, 36, 43, 48, 56, 60, 69, 72 };
-  mKeyboard = new IKeyboardControl(this, kKeybX, kKeybY, 48, 5, &regular, &sharp, coords);
+  mKeyboard = new IKeyboardControl(this, kKeybX, kKeybY, 36, 5, &regular, &sharp, coords);
 
   pGraphics->AttachControl(mKeyboard);
 
@@ -193,13 +205,11 @@ void RaspberryJammer::ProcessDoubleReplacing(double** inputs, double** outputs, 
   mPrevL = peakL;
   mPrevR = peakR;
 
-  /*
   if (GetGUI())
   {
     GetGUI()->SetControlFromPlug(mMeterIdx_L, peakL);
     GetGUI()->SetControlFromPlug(mMeterIdx_R, peakR);
   }
-   */
 
   mMidiQueue.Flush(nFrames);
 }
